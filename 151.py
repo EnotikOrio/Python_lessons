@@ -8,3 +8,4 @@ def nat(g):
             return "Не просте"
     return "Просте"
 print(nat(int(input(""))))
+#This test comment for program
