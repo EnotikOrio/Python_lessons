@@ -8,3 +8,6 @@ def main():
           if not login:
                break
           password = input("Введіть пароль:")
+          add_user(login, password)
+if  __name__ == main():
+     main()
