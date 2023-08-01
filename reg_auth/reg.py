@@ -9,5 +9,5 @@ def main():
                break
           password = input("Введіть пароль:")
           add_user(login, password)
-if  __name__ == main():
+if  __name__ == "__main__":
      main()
