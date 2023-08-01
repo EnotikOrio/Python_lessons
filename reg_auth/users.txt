@@ -9,3 +9,6 @@ EnotikOrio, 1234567
 Pop, p0p 
 Pip, p0p 
 Pup, p0p 
+L, l 
+D, 12 
+pop, p0p 
