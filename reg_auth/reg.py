@@ -1,4 +1,13 @@
 def add_user(login, password):
+    flag = False
+    with open("user.txt", "r") as check:
+         for line in check:
+            e_login, e_pass = line.strip().split(",")
+            if e_login == login:
+                flag = True
+    if flag:
+        print("Користувач з таким логіном існує: ")
+        return False
     with open("users.txt", "a") as file:
         file.write(f"{login}, {password} \n")
 
