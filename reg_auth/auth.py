@@ -7,7 +7,7 @@ def check(login, password):
         return False
 def main():
     while True:
-        login = (input("Введіть Логін, або натиснить enter щоб вийти: "))
+        login = (input("Введіть Логін та пароль що зареєструватися, або натиснить enter щоб вийти: "))
         if not login:
             break
         password = " " + input("Введіть пароль:")
