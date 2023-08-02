@@ -1,18 +1,17 @@
 def delete_user():
-    users = input("Введіть логін користувача котрий хочете видалити: ")
-    with open("users.txt", "r", encoding="utf-8") as file:
+    username = input("Введите логин пользователя, которого хотите удалить: ")
+    with open("users.txt", "r") as file:
         lines = file.readlines()
-    with open("users.txt", "w", encoding="utf-8") as file:
-        delete = False
-        for i, line in enumerate(lines):
-            if line.strip() == f"{users}":
-                delete = True
+    deleted = False
+    with open("users.txt", "w") as file:
+        for line in lines:
+            login, password = line.strip().split(', ')
+            if login != username:
+                file.write(f"{login}, {password}\n")
             else:
-                file.write(line)
-        if delete:
-            print("Користувача видалено: ")
-        else:
-            print("Користувача не знайдено: ")
-    print(f"{users}")
-    print(line.strip() == f"{users}")
+                deleted = True
+    if deleted:
+        print(f"Пользователь с логином '{username}' успешно удален.")
+    else:
+        print(f"Пользователь с логином '{username}' не найден.")
 delete_user()
