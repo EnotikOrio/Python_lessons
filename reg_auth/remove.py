@@ -14,4 +14,3 @@ def delete_user():
         print(f"Пользователь с логином '{username}' успешно удален.")
     else:
         print(f"Пользователь с логином '{username}' не найден.")
-delete_user()
