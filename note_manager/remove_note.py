@@ -9,8 +9,8 @@ def delete_note():
         for i, line in enumerate(lines):
             if line.strip() == f"Заголовок: {note_title}":
                 delete = True
-                for i in range(2):
-                    i += 1
+                for i in range(3):
+                    i += 2
             else:
                 file.write(line)
         if delete:
