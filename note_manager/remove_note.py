@@ -1,22 +1,21 @@
 import os
 
-def delete_note():
-    note_title = input("Введіть заголовок нотатки котру потрібно видалити: ")
-    with open("notes.txt", "r", encoding="utf-8") as file:
+def remove_note():
+    note_title = input("Введіть назву нотатки котру хочете видалити: ")
+    with open("notes.txt", "r", encoding='utf-8') as file:
         lines = file.readlines()
-    with open("notes.txt", "w", encoding="utf-8") as file:
-        delete = False
-        for i, line in enumerate(lines):
-            if line.strip() == f"Заголовок: {note_title}":
-                delete = True
-                for i in range(3):
-                    i += 2
+    deleted = False
+    with open("notes.txt", "w", encoding='utf-8') as file:
+        for line in lines:
+            title, content = line.strip().split(', ')
+            print(title)
+            print(content)
+            if title != "Заголовок: " + note_title:
+                file.write(f"{title}, {content}\n")
             else:
-                file.write(line)
-        if delete:
-            print("Нотатку видалено: ")
-        else:
-            print("Нотатку не знайдено: ")
-    print(f"Заголовок: {note_title}")
-    print(line.strip() == f"Заголовок: {note_title}")
-delete_note()
+                deleted = True
+    if deleted:
+        print(f"Нотатка '{note_title}' вдало видалена.")
+    else:
+        print(f"Нотатка '{note_title}' не знайдена.")
+remove_note()
