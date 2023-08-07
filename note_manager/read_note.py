@@ -9,5 +9,3 @@ def read_notes():
     else:
         print("На данний момент жодноє нотатки немає. Створіть першу нотатку: ")
         add_note.create_note()
-
-read_notes()

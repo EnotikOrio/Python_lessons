@@ -18,4 +18,3 @@ def remove_note():
         print(f"Нотатка '{note_title}' вдало видалена.")
     else:
         print(f"Нотатка '{note_title}' не знайдена.")
-remove_note()
