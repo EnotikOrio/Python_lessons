@@ -59,6 +59,3 @@ for i in range(0, len(markers)):
           
           "\nМаса:", f"{markers[i].mass:.2f}", "g")
     print("----------------")
-   
-
-
